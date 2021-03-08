@@ -1,0 +1,2 @@
+# hotel.api
+Hotel Api
