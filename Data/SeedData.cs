@@ -40,23 +40,6 @@ namespace HOTEL.Api.Data
 
                 context.SaveChanges();
             }
-
-            if (!context.Bookings.Any())
-            {
-
-                context.Bookings.AddRange(
-                    new Booking
-                    {
-                        IdBooking = Guid.NewGuid().ToString(),
-                        StartDateBooking = DateTime.Now.AddDays(10).Date,
-                        EndDateBooking = DateTime.Now.AddDays(13).Date,
-                        IsActive = true,
-                        IdRoom = Guid.NewGuid().ToString()
-                    }
-                );
-
-                context.SaveChanges();
-            }
         }
     }
 }

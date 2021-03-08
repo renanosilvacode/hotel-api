@@ -62,7 +62,7 @@ namespace hotel.api.Services
                 {
                     var bookingToBeUpdate = await GetBookingById(booking.IdBooking);
 
-                    if (bookingToBeUpdate == null)
+                    if (bookingToBeUpdate == null && !bookingToBeUpdate.IsActive)
                         throw new Exception("Booking cannot be updated");
 
                     _context.Entry(booking).State = EntityState.Modified;
@@ -97,14 +97,22 @@ namespace hotel.api.Services
             booking.StartDateBooking = booking.StartDateBooking.Date;
             booking.EndDateBooking = booking.EndDateBooking.Date;
 
+            var roomToBeBooked = _context.Rooms.Find(booking.IdRoom);
+
+            if (roomToBeBooked == null)
+                throw new Exception("Room cannot be booked.");
+
             if (booking.EndDateBooking > booking.StartDateBooking.AddDays(MAX_DAYS_BOOKING_STAY))
                 throw new Exception(string.Format("The stay cannot be longer than {0} days.", MAX_DAYS_BOOKING_STAY));
 
             if (booking.StartDateBooking > DateTime.Now.AddDays(MAX_DAYS_BOOKING_ADVANCE))
                 throw new Exception(string.Format("A booking cannot be made mode than {0} in advance.", MAX_DAYS_BOOKING_ADVANCE));
 
-            if (booking.StartDateBooking == DateTime.Now)
+            if (booking.StartDateBooking == DateTime.Now.Date)
                 throw new Exception(string.Format("You cannot reserve the room for today"));
+
+            if (booking.EndDateBooking < booking.StartDateBooking)
+                throw new Exception("End Date cannot be lower and Start Date.");
 
             var isRoomBooked = IsRoomAvailable(booking);
 

@@ -68,7 +68,7 @@ namespace hotel.Api.Controllers
             return BadRequest();
         }
 
-        [HttpPut("{id}")]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> CancelBooking(string id)
         {
             try
@@ -86,6 +86,8 @@ namespace hotel.Api.Controllers
             return BadRequest();
         }
 
+        [HttpGet]
         public ActionResult<bool> IsRoomAvailable(Booking booking) => _bookingService.IsRoomAvailable(booking);
+        
     }
 }
