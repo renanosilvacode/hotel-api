@@ -13,7 +13,7 @@ namespace hotel.api.models
 
         public DateTime EndDateBooking { get; set; }
 
-        public bool IsBooked { get; set;}
+        public bool IsActive { get; set;}
 
         public string IdRoom { get; set;}
 

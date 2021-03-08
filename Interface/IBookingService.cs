@@ -6,10 +6,13 @@ using System.Threading.Tasks;
 
 namespace hotel.api.Interface
 {
-    public interface IBooking
+    public interface IBookingService
     {
         public Task<Booking> CreateBooking(Booking booking);
         public Task<Booking> GetBookingById(string idBooking);
+        public bool IsRoomAvailable(Booking booking);
+        public Task<Booking> UpdateBooking(Booking booking);
+        public Task<Booking> CancelBooking(string idBooking);
 
     }
 }

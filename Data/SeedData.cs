@@ -48,20 +48,9 @@ namespace HOTEL.Api.Data
                     new Booking
                     {
                         IdBooking = Guid.NewGuid().ToString(),
-                        StartDateBooking = DateTime.Now.AddDays(10),
-                        EndDateBooking = DateTime.Now.AddDays(13),
-                        IsBooked = true,
-                        IdRoom = Guid.NewGuid().ToString()
-                    }
-                );
-
-                context.Bookings.AddRange(
-                    new Booking
-                    {
-                        IdBooking = Guid.NewGuid().ToString(),
-                        StartDateBooking = DateTime.Now.AddDays(20),
-                        EndDateBooking = DateTime.Now.AddDays(23),
-                        IsBooked = true,
+                        StartDateBooking = DateTime.Now.AddDays(10).Date,
+                        EndDateBooking = DateTime.Now.AddDays(13).Date,
+                        IsActive = true,
                         IdRoom = Guid.NewGuid().ToString()
                     }
                 );

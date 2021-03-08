@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace ContosoPets.Api.Controllers
+namespace hotel.Api.Controllers
 {
     [ApiController]
     [Route("api/v1/[controller]")]
@@ -20,13 +20,5 @@ namespace ContosoPets.Api.Controllers
         [HttpGet]
         public ActionResult<List<Room>> GetAll() =>
             _context.Rooms.ToList();
-
-        // GET by ID action
-
-        // POST action
-
-        // PUT action
-
-        // DELETE action
     }
 }

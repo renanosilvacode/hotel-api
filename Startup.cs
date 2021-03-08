@@ -1,3 +1,5 @@
+using hotel.api.Interface;
+using hotel.api.Services;
 using HOTEL.Api.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -21,6 +23,9 @@ namespace hotel.api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddTransient<IBookingService, BookingService>();
+            services.AddMvc();
+
 
             services.AddDbContext<DataContext>(opt => opt.UseInMemoryDatabase("Database"));
 
