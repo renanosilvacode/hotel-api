@@ -19,7 +19,7 @@
   </p>
   
   <p align="center">
-    The API is also hosted at heroku (https://hotel-api-cancun.herokuapp.com/api/v1/room)
+    The API is also hosted at <a href="https://hotel-api-cancun.herokuapp.com/api/v1/room"><b>Heroku</b></a>
   </p>
 
 </div>
