@@ -54,3 +54,26 @@ $ dotnet build
 $ dotnet run
 ```
 Access API at https://localhost:5000/swagger
+
+![image](https://user-images.githubusercontent.com/25445892/110323182-0144d200-7ff3-11eb-967b-38fcfa7118e6.png)
+
+```bash
+# BOOKING GET {ID}
+- Get booking details based by id
+
+# BOOKING POST
+- Create a new booking
+
+# BOOKING DELETE {id)
+- Cancel a booking based by id
+
+# BOOKING PUT 
+- Update a booking based by id
+
+# HOTEL GET 
+- Get Hotel details
+
+# ROOM GET 
+- Get room details
+
+```
