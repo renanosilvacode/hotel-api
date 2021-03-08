@@ -17,6 +17,10 @@
   <p align="center">
     A Hotel WebAPI made in .NET 5. The goal is to book a room according to specific rules.
   </p>
+  
+  <p align="center">
+    The API is also hosted at heroku (https://hotel-api-cancun.herokuapp.com/api/v1/room)
+  </p>
 
 </div>
 
